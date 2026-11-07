@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a1a52"/>
+      <stop offset="1" stop-color="#140f26"/>
+    </linearGradient>
+    <linearGradient id="curve" x1="24" y1="96" x2="104" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff5c8a"/>
+      <stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="128" height="128" rx="28" fill="url(#bg)"/>
+  <!-- viewfinder corners -->
+  <g fill="none" stroke="#b9a8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 40 V18 H40"/>
+    <path d="M88 18 H110 V40"/>
+    <path d="M110 88 V110 H88"/>
+    <path d="M40 110 H18 V88"/>
+  </g>
+  <!-- bezier handles -->
+  <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2.5">
+    <line x1="34" y1="88" x2="46" y2="40"/>
+    <line x1="94" y1="40" x2="82" y2="88"/>
+  </g>
+  <!-- curve -->
+  <path d="M34 88 C46 40 82 88 94 40" fill="none" stroke="url(#curve)" stroke-width="9" stroke-linecap="round"/>
+  <!-- handle tips -->
+  <circle cx="46" cy="40" r="5" fill="#ffffff"/>
+  <circle cx="82" cy="88" r="5" fill="#ffffff"/>
+  <!-- anchors -->
+  <rect x="27" y="81" width="14" height="14" rx="2" fill="#ffffff" stroke="#140f26" stroke-width="2.5"/>
+  <rect x="87" y="33" width="14" height="14" rx="2" fill="#ffffff" stroke="#140f26" stroke-width="2.5"/>
+</svg>

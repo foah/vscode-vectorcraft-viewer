@@ -1,0 +1,14 @@
+{
+  "description": "Standalone viewer for .vectorcraft files: no VectorCraft install needed. Unofficial.",
+  "capabilities.virtualWorkspaces": "Files are copied to a temporary folder to be rendered; \"Open in VectorCraft\" needs a file on disk.",
+  "customEditor.displayName": "VectorCraft Viewer",
+  "command.openPreview": "Open Preview",
+  "command.downloadCli": "Download or Update vectorcraft-cli",
+  "command.selectCli": "Use an Existing vectorcraft-cli…",
+  "command.showLog": "Show Log",
+  "config.cliPath": "Path of `vectorcraft-cli`. Leave empty to use the copy downloaded by this extension, or one found on `PATH` or in a VectorCraft install.",
+  "config.format": "Image format used for the preview.",
+  "config.format.png": "VectorCraft's own renderer, pixel-exact (recommended).",
+  "config.format.svg": "Lighter, but effects go through the browser's SVG filters.",
+  "config.scale": "Pixels per point for PNG rendering (2 is sharp on high-density screens)."
+}

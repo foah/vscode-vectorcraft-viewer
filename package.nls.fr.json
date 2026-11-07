@@ -1,0 +1,14 @@
+{
+  "description": "Visionneuse autonome pour les fichiers .vectorcraft, sans installer VectorCraft. Non officielle.",
+  "capabilities.virtualWorkspaces": "Les fichiers sont copiés dans un dossier temporaire pour le rendu ; « Ouvrir dans VectorCraft » nécessite un fichier sur le disque.",
+  "customEditor.displayName": "VectorCraft Viewer",
+  "command.openPreview": "Ouvrir l'aperçu",
+  "command.downloadCli": "Télécharger ou mettre à jour vectorcraft-cli",
+  "command.selectCli": "Utiliser un vectorcraft-cli existant…",
+  "command.showLog": "Afficher le journal",
+  "config.cliPath": "Chemin de `vectorcraft-cli`. Vide : la copie téléchargée par l'extension, ou celle trouvée dans le `PATH` ou dans une installation de VectorCraft.",
+  "config.format": "Format d'image utilisé pour l'aperçu.",
+  "config.format.png": "Rendu de VectorCraft lui-même, exact au pixel près (recommandé).",
+  "config.format.svg": "Plus léger, mais les effets passent par les filtres SVG du navigateur.",
+  "config.scale": "Pixels par point pour le rendu PNG (2 = net sur un écran haute densité)."
+}

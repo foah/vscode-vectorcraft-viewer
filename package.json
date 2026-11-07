@@ -1,0 +1,148 @@
+{
+  "name": "vectorcraft-viewer",
+  "displayName": "VectorCraft Viewer",
+  "description": "%description%",
+  "version": "0.1.0",
+  "preview": true,
+  "publisher": "foah",
+  "author": "foah",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1b1430",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foah/vscode-vectorcraft-viewer"
+  },
+  "bugs": {
+    "url": "https://github.com/foah/vscode-vectorcraft-viewer/issues"
+  },
+  "homepage": "https://github.com/foah/vscode-vectorcraft-viewer#readme",
+  "keywords": [
+    "vectorcraft",
+    "vector",
+    "illustration",
+    "preview",
+    "viewer"
+  ],
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/extension.js",
+  "l10n": "./l10n",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": "limited",
+      "description": "%capabilities.virtualWorkspaces%"
+    }
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "vectorcraftViewer.preview",
+        "displayName": "%customEditor.displayName%",
+        "selector": [
+          {
+            "filenamePattern": "*.vectorcraft"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vectorcraftViewer.openPreview",
+        "title": "%command.openPreview%",
+        "category": "VectorCraft",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "vectorcraftViewer.downloadCli",
+        "title": "%command.downloadCli%",
+        "category": "VectorCraft"
+      },
+      {
+        "command": "vectorcraftViewer.selectCli",
+        "title": "%command.selectCli%",
+        "category": "VectorCraft"
+      },
+      {
+        "command": "vectorcraftViewer.showLog",
+        "title": "%command.showLog%",
+        "category": "VectorCraft"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vectorcraftViewer.openPreview",
+          "when": "resourceExtname == .vectorcraft && activeCustomEditorId != vectorcraftViewer.preview",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "vectorcraftViewer.openPreview",
+          "when": "resourceExtname == .vectorcraft"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "VectorCraft Viewer",
+      "properties": {
+        "vectorcraftViewer.cliPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "markdownDescription": "%config.cliPath%"
+        },
+        "vectorcraftViewer.format": {
+          "type": "string",
+          "enum": [
+            "png",
+            "svg"
+          ],
+          "enumDescriptions": [
+            "%config.format.png%",
+            "%config.format.svg%"
+          ],
+          "default": "png",
+          "description": "%config.format%"
+        },
+        "vectorcraftViewer.scale": {
+          "type": "number",
+          "default": 2,
+          "minimum": 0.25,
+          "maximum": 8,
+          "description": "%config.scale%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test \"out/test/**/*.test.js\"",
+    "test:e2e": "npm run compile && node out/test/e2e.js",
+    "package": "vsce package --no-dependencies",
+    "publish:vsce": "vsce publish --no-dependencies",
+    "publish:ovsx": "ovsx publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^4.1.0",
+    "ovsx": "^1.3.0",
+    "typescript": "^5.6.0"
+  }
+}
